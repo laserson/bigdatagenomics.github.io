@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Big Data Genomics]]></title>
-  <link href="http://bigdatagenomics.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: ADAM, | Big Data Genomics]]></title>
+  <link href="http://bigdatagenomics.github.io/blog/categories/adam/atom.xml" rel="self"/>
   <link href="http://bigdatagenomics.github.io/"/>
   <updated>2013-12-18T16:57:57-08:00</updated>
   <id>http://bigdatagenomics.github.io/</id>
@@ -37,12 +37,7 @@ provides the following advantages:</p>
 </ol>
 
 
-<p><span class='pullquote-right' data-pullquote='on a 250 Gigabyte (GB) high (60×) coverage human genome, this system achieves a 50× speedup'>
-In addition to improving the format’s cross-platform portability, these changes lead to significant performance improvements.
-On a single node, we are able to speedup sort and duplicate marking by 2×. More importantly,
-on a 250 Gigabyte (GB) high (60×) coverage human genome, this system achieves a 50× speedup
-on a 100 node computing cluster (see Table 1), fulfilling the promise of scalability of ADAM.
-</span></p>
+<p>Surround your pullquote like this {" text to be quoted "}</p>
 
 <p>You can read the full tech report at <a href="http://www.eecs.berkeley.edu/Pubs/TechRpts/2013/EECS-2013-207.html">http://www.eecs.berkeley.edu/Pubs/TechRpts/2013/EECS-2013-207.html</a></p>
 ]]></content>
