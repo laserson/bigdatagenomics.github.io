@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Publications - Big Data Genomics</title>
+  <title>An example RFC - Big Data Genomics</title>
   <meta name="author" content="Big Data Genomics">
 
   
-  <meta name="description" content="Category: Publications">
+  <meta name="description" content="An Example RFC Dec 29th, 2013 This is an example of an ADAM RFC. It is meant to demonstrate
+syntax of an RFC as well as potential headings and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bigdatagenomics.github.ioblog/categories/publications/">
+  <link rel="canonical" href="http://bigdatagenomics.github.io/rfc/1/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -66,33 +67,119 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Category: Publications</h1>
-    
+    <h1 class="entry-title">An Example RFC</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-29T10:51:00-08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2013</time></p>
   </header>
   
-  <div id="blog-archives" class="category">
+  <p><em>This is an example of an ADAM RFC. It is meant to demonstrate
+syntax of an RFC as well as potential headings and structure.</em></p>
+
+<h3>Schema</h3>
+
+<p>The following schema defines how to store
+<a href="http://en.wikipedia.org/wiki/FASTA_format">FASTA formatted data</a>
+in ADAM. The following schema captures all FASTA content.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">record</span> <span class="n">ADAMFastaFragment</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">union</span> <span class="p">{</span><span class="n">null</span><span class="p">,</span> <span class="n">string</span> <span class="p">}</span> <span class="n">description</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">union</span> <span class="p">{</span><span class="n">null</span><span class="p">,</span> <span class="kt">long</span> <span class="p">}</span> <span class="n">start</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">union</span> <span class="p">{</span><span class="n">null</span><span class="p">,</span> <span class="kt">long</span> <span class="p">}</span> <span class="n">end</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">union</span> <span class="p">{</span><span class="n">null</span><span class="p">,</span> <span class="n">string</span> <span class="p">}</span> <span class="n">sequence</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>All fields are optional and default to <code>null</code>.</p>
+
+<h3>Performance Considerations</h3>
+
+<p>The <code>end</code> field can be elided as it can be inferred from the <code>start</code> and <code>sequence</code> length.
+However, for performance, a pushdown predicate on the start and end position would be
+faster than materializing the sequence.</p>
+
+<h3>Predicates</h3>
+
+<p>A commonly used predicate would be to find all sequences with a specific description that
+<code>start</code> and <code>end</code> within a specified range.</p>
+
+<h3>Common Operations</h3>
+
+<ol>
+<li>Reading the entire sequence</li>
+<li>Reading a portion of the sequence that falls in a specified range.</li>
+</ol>
+
+
+<h3>Open Questions</h3>
+
+<ol>
+<li>Should we require that the <code>end</code> field is always specified for performance?</li>
+<li>Should we break up the description into the superset of all sequence identifiers?</li>
+</ol>
+
+
+<h3>Filename extension</h3>
+
+<p>Once coverted to ADAM, the file extension will be <code>.fasta.adam</code>.</p>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
 
 
 
   
-  <h2>2013</h2>
 
-<article>
+
+<time datetime="2013-12-29T10:51:00-08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2013</time>
+        
+      </p>
+      
+        <div class="sharing">
   
-<h1><a href="/blog/2013/12/18/adam-berkeley-tech-report/">ADAM Tech Report Released</a></h1>
-<time datetime="2013-12-18T16:39:20-08:00" pubdate><span class='month'>Dec</span> <span class='day'>18</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/adam/'>ADAM,</a>, <a class='category' href='/blog/categories/publications/'>Publications</a></span>
-</footer>
-
-
-</article>
-
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://bigdatagenomics.github.io/rfc/1/index.html" data-via="" data-counturl="http://bigdatagenomics.github.io/rfc/1/index.html" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
 
+      
+    </footer>
   
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -165,7 +252,10 @@ Solving genomics problems at scale using open-source.
       var disqus_shortname = 'bigdatagenomics';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://bigdatagenomics.github.io/rfc/1/index.html';
+        var disqus_url = 'http://bigdatagenomics.github.io/rfc/1/index.html';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
