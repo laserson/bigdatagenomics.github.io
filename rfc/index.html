@@ -88,27 +88,28 @@ less formal. There are no requirements on the language and structure of an
 RFC; however, the focus should always be on concrete <a href="http://avro.apache.org/docs/1.7.5/idl.html">Avro IDL</a>
 examples to define the data structures with pseudo-code and/or clear descriptions of data transformations and use
 cases. Once the team has reached consensus on an RFC, it should be <em>easy to turn the ideas
-into working code</em>.</p>
+into working code</em> relatively quickly.</p>
 
 <p>To create or modify an RFC,</p>
 
 <ol>
 <li>Join the <a href="/mail">ADAM Mailing List</a></li>
 <li>Fork the <a href="https://github.com/bigdatagenomics/bigdatagenomics.github.io">bigdatagenomics.github.io repo</a></li>
-<li>Switch to the <code>source</code> branch and edit (or create) files in the <code>source/rfc</code> directory.
+<li>Switch to the <code>source</code> branch and edit (or create) files in the <code>source/rfc</code> directory
 
 <ul>
-<li>To create a new RFC, you simply run e.g. <code>rake new_page["rfc/42"]</code> to create RFC #42.</li>
-<li>See <a href="/rfc/1">RFC #1</a>, for an example RFC.</li>
+<li>To create a new RFC, you simply run e.g. <code>rake new_page["rfc/42"]</code> to create RFC #42</li>
+<li>See <a href="/rfc/1">RFC #1</a>, for an example RFC</li>
 <li>RFCs are written in <a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
+<li>All <a href="http://octopress.org/docs/">Octopress</a> extensions are supported</li>
 </ul>
 </li>
-<li>Test your edits using <code>rake generate preview</code> and opening your browser to <code>http://localhost:4000</code>.</li>
-<li>Submit your changes as a pull request against the <code>source</code> branch.</li>
+<li>Test your edits by running <code>rake generate preview</code> and opening <a href="http://localhost:4000">http://localhost:4000</a> in your browser</li>
+<li>Submit your changes as a pull request against the <code>source</code> branch</li>
 </ol>
 
 
-<p>All RFCs are open for comment with comment boxes in the footer.</p>
+<p>All RFCs are open for comment by anyone with comment boxes in the footer of the page.</p>
 
 <p>List of RFCs:</p>
 
